@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/item_1"
+        android:orderInCategory="100"
+        android:title="翻转动画"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item_2"
+        android:orderInCategory="100"
+        android:title="预览动画"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/item_3"
+        android:orderInCategory="100"
+        android:title="普通动画"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/item_4"
+        android:orderInCategory="100"
+        android:title="属性动画"
+        app:showAsAction="never" />
+</menu>
