@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by yangjian on 16/2/18.
+ * Created by canyignhao on 16/2/18.
  */
 public class AnimationActivity extends AppCompatActivity {
 

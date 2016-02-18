@@ -22,7 +22,7 @@ import static com.canyinghao.cananimation.CanAnimation.animationSequence;
 import static com.canyinghao.cananimation.CanAnimation.animationTogether;
 
 /**
- * Created by yangjian on 16/2/18.
+ * Created by canyignhao on 16/2/18.
  */
 public class AnimatorActivity extends AppCompatActivity {
 
@@ -134,13 +134,6 @@ public class AnimatorActivity extends AppCompatActivity {
                             Snackbar.make(toolbar, "动画播放完毕", Snackbar.LENGTH_SHORT).show();
                         }
                     })
-
-
-
-
-
-
-
 
             ).start();
 

@@ -10,7 +10,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by yangjian on 16/2/17.
+ * Created by canyignhao on 16/2/17.
  */
 public class FlipperAnimeActivity extends AppCompatActivity {
 

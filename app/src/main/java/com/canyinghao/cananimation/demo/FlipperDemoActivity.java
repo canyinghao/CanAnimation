@@ -12,7 +12,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by yangjian on 16/2/16.
+ * Created by canyignhao on 16/2/16.
  */
 public class FlipperDemoActivity extends AppCompatActivity implements android.view.GestureDetector.OnGestureListener{
 
