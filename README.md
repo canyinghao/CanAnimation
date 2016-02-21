@@ -144,7 +144,7 @@ public class FlipperAnimeActivity extends AppCompatActivity {
 ![](https://avatars3.githubusercontent.com/u/12572840?v=3&s=460) 
 
 canyinghao: <canyinghao@hotmail.com>  
-
+![新浪微博](http://weibo.com/u/5670978460)
 
 ### License
 
