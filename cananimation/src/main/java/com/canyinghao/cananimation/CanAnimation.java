@@ -142,10 +142,11 @@ public final class CanAnimation {
 
 
         ValueAnimator animator = new ValueAnimator();
+        animator.setDuration(0);
         animator.setIntValues(1);
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
-            public void onAnimationEnd(Animator animation) {
+            public void onAnimationStart(Animator animation) {
                 runnable.run();
             }
         });
