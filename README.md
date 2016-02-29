@@ -4,7 +4,7 @@
 
 ##添加依赖
 ```JAVA
-compile 'com.canyinghao:cananimation:1.0.0'
+compile 'com.canyinghao:cananimation:1.0.1'
 ```
 
 ## 使用方式 
