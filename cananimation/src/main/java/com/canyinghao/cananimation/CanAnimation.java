@@ -137,6 +137,22 @@ public final class CanAnimation {
     }
 
 
+    @NonNull
+    public static  Animator run(@NonNull final Runnable runnable) {
+
+
+        ValueAnimator animator = new ValueAnimator();
+        animator.setIntValues(1);
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                runnable.run();
+            }
+        });
+        return animator;
+    }
+
+
     /**
      * 放大并逐渐消失
      * @return

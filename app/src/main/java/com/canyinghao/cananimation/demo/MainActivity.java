@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.canyinghao.cananimation.CanAnimation;
 import com.canyinghao.cananimation.CanValueAnimator;
 
 import butterknife.Bind;
@@ -132,10 +133,10 @@ public class MainActivity extends AppCompatActivity {
                     ),
 
 
-                    builder.run(new Runnable() {
+                    CanAnimation.run(new Runnable() {
                         @Override
                         public void run() {
-                            Snackbar.make(toolbar,"动画播放完毕",Snackbar.LENGTH_SHORT).show();
+                            Snackbar.make(toolbar, "动画播放完毕", Snackbar.LENGTH_SHORT).show();
                         }
                     })
 

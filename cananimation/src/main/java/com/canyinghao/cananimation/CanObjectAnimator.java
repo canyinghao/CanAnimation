@@ -1,10 +1,8 @@
 package com.canyinghao.cananimation;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -568,20 +566,7 @@ public final class CanObjectAnimator {
         return alpha(fromAlpha, toAlpha, duration, interpolator, false);
     }
 
-    @NonNull
-    public Animator run(@NonNull final Runnable runnable) {
 
-
-        ValueAnimator animator = new ValueAnimator();
-        animator.setIntValues(1);
-        animator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                runnable.run();
-            }
-        });
-        return animator;
-    }
 
 
 }

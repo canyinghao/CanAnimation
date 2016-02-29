@@ -1,7 +1,6 @@
 package com.canyinghao.cananimation;
 
 import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.ArgbEvaluator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
@@ -491,20 +490,7 @@ public class CanValueAnimator extends ValueAnimator {
         }
 
 
-        @NonNull
-        public Animator run(@NonNull final Runnable runnable) {
 
-
-            ValueAnimator animator = new ValueAnimator();
-            animator.setIntValues(1);
-            animator.addListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    runnable.run();
-                }
-            });
-            return animator;
-        }
 
     }
 

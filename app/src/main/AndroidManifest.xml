@@ -21,6 +21,7 @@
 
         <activity android:name=".FlipperDemoActivity" />
         <activity android:name=".FlipperAnimeActivity" />
+
         <activity android:name=".AnimationActivity" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AnimatorActivity" android:theme="@style/AppTheme.NoActionBar"/>
     </application>
