@@ -4,7 +4,7 @@
 
 ##添加依赖
 ```JAVA
-compile 'com.canyinghao:cananimation:1.0.1'
+compile 'com.canyinghao:cananimation:1.0.2'
 ```
 
 ## 使用方式 
@@ -49,7 +49,7 @@ CanObjectAnimator使用代码：
                     ),
 
 
-                    builder.run(new Runnable() {
+                    CanAnimation.run(new Runnable() {
                         @Override
                         public void run() {
                             Snackbar.make(toolbar, "动画播放完毕", Snackbar.LENGTH_SHORT).show();
@@ -62,7 +62,7 @@ CanObjectAnimator使用代码：
 CanValueAnimator使用代码：
 ```JAVA
 
- CanValueAnimator.Builder builder = CanValueAnimator.Builder.on(view);
+CanValueAnimator.Builder builder = CanValueAnimator.Builder.on(view);
 
 
             animationSequence(builder.moveTo(center.x, center.y, 0),
@@ -97,13 +97,13 @@ CanValueAnimator使用代码：
                     ),
 
 
-                    builder.run(new Runnable() {
+                    CanAnimation.run(new Runnable() {
                         @Override
                         public void run() {
-                            Snackbar.make(toolbar,"动画播放完毕",Snackbar.LENGTH_SHORT).show();
+                            Snackbar.make(toolbar, "动画播放完毕", Snackbar.LENGTH_SHORT).show();
                         }
                     })
-                    
+
 
             ).start();
 
@@ -143,13 +143,13 @@ public class FlipperAnimeActivity extends AppCompatActivity {
 
 ![](https://avatars3.githubusercontent.com/u/12572840?v=3&s=460) 
 
-canyinghao: <canyinghao@hotmail.com>  
+canyinghao: 
+
+<canyinghao@hotmail.com>  
 
 [新浪微博](http://weibo.com/u/5670978460)
 
 [google+](https://plus.google.com/u/0/109542533436298291853)
-
-[twitter](https://twitter.com/canyinghao)
 
 ### License
 
