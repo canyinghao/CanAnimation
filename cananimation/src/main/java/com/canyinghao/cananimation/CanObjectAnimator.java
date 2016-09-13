@@ -1,14 +1,17 @@
 package com.canyinghao.cananimation;
 
-import android.animation.Animator;
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
+
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.TextView;
+
+import com.nineoldandroids.animation.Animator;
+import com.nineoldandroids.animation.ArgbEvaluator;
+import com.nineoldandroids.animation.ObjectAnimator;
+import com.nineoldandroids.view.ViewHelper;
 
 import static com.canyinghao.cananimation.CanAnimation.animationTogether;
 
@@ -152,7 +155,8 @@ public final class CanObjectAnimator {
     public Animator rotate(float rotation, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
 
 
-        return rotate(mView.getRotation(), rotation, duration, interpolator, isFrom);
+
+        return rotate(ViewHelper.getRotation(mView), rotation, duration, interpolator, isFrom);
 
 
     }
@@ -172,9 +176,10 @@ public final class CanObjectAnimator {
 
         Animator animator;
         if (isFrom) {
-            animator = ObjectAnimator.ofFloat(mView, "rotationX", rotationX, mView.getRotationX());
+
+            animator = ObjectAnimator.ofFloat(mView, "rotationX", rotationX, ViewHelper.getRotationX(mView));
         } else {
-            animator = ObjectAnimator.ofFloat(mView, "rotationX", mView.getRotationX(), rotationX);
+            animator = ObjectAnimator.ofFloat(mView, "rotationX", ViewHelper.getRotationX(mView), rotationX);
         }
 
 
@@ -197,9 +202,9 @@ public final class CanObjectAnimator {
 
         Animator animator;
         if (isFrom) {
-            animator = ObjectAnimator.ofFloat(mView, "rotationY", rotationY, mView.getRotationX());
+            animator = ObjectAnimator.ofFloat(mView, "rotationY", rotationY, ViewHelper.getRotationX(mView));
         } else {
-            animator = ObjectAnimator.ofFloat(mView, "rotationY", mView.getRotationX(), rotationY);
+            animator = ObjectAnimator.ofFloat(mView, "rotationY", ViewHelper.getRotationX(mView), rotationY);
         }
 
 
@@ -307,8 +312,10 @@ public final class CanObjectAnimator {
 
     @NonNull
     public Animator scale(float targetX, float targetY, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
-        float currentX = mView.getScaleX();
-        float currentY = mView.getScaleY();
+        float currentX = ViewHelper.getScaleX(mView);
+        float currentY = ViewHelper.getScaleY(mView);
+
+
 
 
         return scale(currentX, targetX, currentY, targetY, duration, interpolator, isFrom);
@@ -412,8 +419,8 @@ public final class CanObjectAnimator {
     @NonNull
     public Animator move(float targetX, float targetY, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
 
-        float currentX = mView.getX();
-        float currentY = mView.getY();
+        float currentX = ViewHelper.getX(mView);
+        float currentY = ViewHelper.getY(mView);
 
 
         return move(currentX, targetX, currentY, targetY, duration, interpolator, isFrom);
@@ -508,7 +515,7 @@ public final class CanObjectAnimator {
     public Animator alpha(float toAlpha, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
 
 
-        return alpha(mView.getAlpha(), toAlpha, duration, interpolator, isFrom);
+        return alpha(ViewHelper.getAlpha(mView), toAlpha, duration, interpolator, isFrom);
     }
 
     @NonNull

@@ -6,7 +6,7 @@ import android.widget.ViewFlipper;
 
 import com.canyinghao.cananimation.CanFlipAnimation;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 public class FlipperAnimeActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.vf)
+    @BindView(R.id.vf)
     ViewFlipper vf;
 
     @Override

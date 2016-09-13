@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.canyinghao.cananimation.CanAnimation;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -25,11 +25,11 @@ import butterknife.OnClick;
 public class AnimationActivity extends AppCompatActivity {
 
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.animContainer)
+    @BindView(R.id.animContainer)
     FrameLayout animContainer;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
 
     @Override

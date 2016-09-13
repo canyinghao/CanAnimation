@@ -1,13 +1,16 @@
 package com.canyinghao.cananimation;
 
-import android.animation.Animator;
-import android.animation.ArgbEvaluator;
-import android.animation.PropertyValuesHolder;
-import android.animation.ValueAnimator;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.animation.Interpolator;
+
+import com.nineoldandroids.animation.Animator;
+import com.nineoldandroids.animation.ArgbEvaluator;
+import com.nineoldandroids.animation.PropertyValuesHolder;
+import com.nineoldandroids.animation.ValueAnimator;
+import com.nineoldandroids.view.ViewHelper;
 
 import java.lang.reflect.Method;
 
@@ -153,7 +156,8 @@ public class CanValueAnimator extends ValueAnimator {
     }
 
     private void rotate(boolean isFrom, String str) {
-        float rotation = view.getRotation();
+        float rotation = ViewHelper.getRotation(view);
+
 
 
         PropertyValuesHolder rotate = PropertyValuesHolder.ofFloat(str, !isFrom ? rotation : floatTargets[0], isFrom ? rotation : floatTargets[0]);
@@ -166,8 +170,8 @@ public class CanValueAnimator extends ValueAnimator {
     }
 
     private void move(boolean isFrom, String strX, String strY) {
-        float currentX = view.getX();
-        float currentY = view.getY();
+        float currentX = ViewHelper.getX(view);
+        float currentY = ViewHelper.getY(view);
 
         PropertyValuesHolder x = PropertyValuesHolder.ofFloat(strX, !isFrom ? currentX : floatTargets[0], isFrom ? currentX : floatTargets[0]);
         PropertyValuesHolder y = PropertyValuesHolder.ofFloat(strY, !isFrom ? currentY : floatTargets[1], isFrom ? currentY : floatTargets[1]);
@@ -176,8 +180,8 @@ public class CanValueAnimator extends ValueAnimator {
     }
 
     private void scale(boolean isFrom, String strX, String strY) {
-        float currentScaleX = view.getScaleX();
-        float currentScaleY = view.getScaleY();
+        float currentScaleX = ViewHelper.getScaleX(view);
+        float currentScaleY = ViewHelper.getScaleY(view);
         PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat(strX, !isFrom ? currentScaleX : floatTargets[0], isFrom ? currentScaleX : floatTargets[0]);
         PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat(strY, !isFrom ? currentScaleY : floatTargets[1], isFrom ? currentScaleY : floatTargets[1]);
         setValues(scaleX, scaleY);
@@ -185,7 +189,7 @@ public class CanValueAnimator extends ValueAnimator {
     }
 
     private void alpha(boolean isFrom, String str) {
-        float currentAlpha = view.getAlpha();
+        float currentAlpha = ViewHelper.getAlpha(view);
 
         PropertyValuesHolder alpha = PropertyValuesHolder.ofFloat(str, !isFrom ? currentAlpha : floatTargets[0], isFrom ? currentAlpha : floatTargets[0]);
 

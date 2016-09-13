@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.canyinghao.cananimation.CanAnimation;
 import com.canyinghao.cananimation.CanValueAnimator;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -28,12 +28,12 @@ import static com.canyinghao.cananimation.CanAnimation.animationTogether;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
-    @Bind(R.id.animContainer)
+    @BindView(R.id.animContainer)
     FrameLayout animContainer;
 
     @Override

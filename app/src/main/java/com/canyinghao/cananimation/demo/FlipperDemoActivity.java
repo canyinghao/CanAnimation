@@ -8,7 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 public class FlipperDemoActivity extends AppCompatActivity implements android.view.GestureDetector.OnGestureListener{
 
 
-    @Bind(R.id.vf)
+    @BindView(R.id.vf)
     ViewFlipper viewFlipper;
     GestureDetector gestureDetector;
     @Override
