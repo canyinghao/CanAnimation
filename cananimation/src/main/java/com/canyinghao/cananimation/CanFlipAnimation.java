@@ -11,6 +11,8 @@ import android.widget.ViewAnimator;
 
 public class CanFlipAnimation {
 
+    private static boolean isRunning = false;
+
     public enum FlipDirection {
         LEFT_RIGHT,
         RIGHT_LEFT,
@@ -113,12 +115,13 @@ public class CanFlipAnimation {
 
     /**
      * 翻转动画翻转一定次数
-     * @param count
-     * @param viewAnimator
-     * @param dir
-     * @param duration
-     * @param interpolator
-     * @param scale
+     *
+     * @param count        int
+     * @param viewAnimator ViewAnimator
+     * @param dir          FlipDirection
+     * @param duration     long
+     * @param interpolator Interpolator
+     * @param scale        float
      */
     public static void flipRepeat(final int count, final ViewAnimator viewAnimator, final FlipDirection dir, final long duration, final Interpolator interpolator, @FloatRange(from = 0.0, to = 1.0) final float scale) {
 
@@ -142,39 +145,62 @@ public class CanFlipAnimation {
 
 
             }
+        } else {
+
+            if (!isRunning) {
+                return;
+            }
         }
 
 
-        Animation[] anims = flipTransition(viewAnimator, dir, duration, interpolator, scale);
+        if (viewAnimator.getTag() instanceof Integer) {
+            int index = (int) viewAnimator.getTag();
 
-
-        anims[1].setAnimationListener(new Animation.AnimationListener() {
-
-            @Override
-            public void onAnimationStart(Animation arg0) {
-
-
+            if (index == -1) {
+                return;
             }
+        }
 
-            @Override
-            public void onAnimationRepeat(Animation arg0) {
-
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation arg0) {
-                flipRepeat(count, viewAnimator, dir, duration, interpolator, scale);
+        try {
+            Animation[] anims = flipTransition(viewAnimator, dir, duration, interpolator, scale);
 
 
-            }
-        });
+            anims[1].setAnimationListener(new Animation.AnimationListener() {
+
+                @Override
+                public void onAnimationStart(Animation arg0) {
+
+
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation arg0) {
+
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation arg0) {
+                    flipRepeat(count, viewAnimator, dir, duration, interpolator, scale);
+
+
+                }
+            });
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
 
     }
 
     public static void flipForever(final ViewAnimator viewAnimator, final FlipDirection dir, final long duration, final Interpolator interpolator, @FloatRange(from = 0.0, to = 1.0) final float scale) {
 
+        isRunning = true;
 
         flipRepeat(0, viewAnimator, dir, duration, interpolator, scale);
+    }
+
+    public static void setIsRunning(boolean isRunning) {
+        CanFlipAnimation.isRunning = isRunning;
     }
 }
