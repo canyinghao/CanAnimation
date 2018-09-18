@@ -11,7 +11,6 @@ import android.widget.ViewAnimator;
 
 public class CanFlipAnimation {
 
-    private static boolean isRunning = false;
 
     public enum FlipDirection {
         LEFT_RIGHT,
@@ -147,19 +146,16 @@ public class CanFlipAnimation {
             }
         } else {
 
-            if (!isRunning) {
-                return;
+            if (viewAnimator.getTag() instanceof Integer) {
+                int index = (int) viewAnimator.getTag();
+
+                if (index == -1) {
+                    return;
+                }
             }
         }
 
 
-        if (viewAnimator.getTag() instanceof Integer) {
-            int index = (int) viewAnimator.getTag();
-
-            if (index == -1) {
-                return;
-            }
-        }
 
         try {
             Animation[] anims = flipTransition(viewAnimator, dir, duration, interpolator, scale);
@@ -195,12 +191,7 @@ public class CanFlipAnimation {
 
     public static void flipForever(final ViewAnimator viewAnimator, final FlipDirection dir, final long duration, final Interpolator interpolator, @FloatRange(from = 0.0, to = 1.0) final float scale) {
 
-        isRunning = true;
-
         flipRepeat(0, viewAnimator, dir, duration, interpolator, scale);
     }
 
-    public static void setIsRunning(boolean isRunning) {
-        CanFlipAnimation.isRunning = isRunning;
-    }
 }
