@@ -1,6 +1,6 @@
 package com.canyinghao.cananimation;
 
-import android.support.annotation.FloatRange;
+
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
@@ -55,7 +55,7 @@ public class CanFlipAnimation {
 
     }
 
-    private static Animation[] flipAnim(final View fromView, FlipDirection dir, long duration, Interpolator interpolator, @FloatRange(from = 0.0, to = 1.0) float scale) {
+    private static Animation[] flipAnim(final View fromView, FlipDirection dir, long duration, Interpolator interpolator,  float scale) {
         Animation[] result = new Animation[2];
         float centerX;
         float centerY;
@@ -100,7 +100,7 @@ public class CanFlipAnimation {
     }
 
 
-    private static Animation[] flipTransition(final ViewAnimator viewAnimator, FlipDirection dir, long duration, Interpolator interpolator, @FloatRange(from = 0.0, to = 1.0) float scale) {
+    private static Animation[] flipTransition(final ViewAnimator viewAnimator, FlipDirection dir, long duration, Interpolator interpolator,  float scale) {
 
 
         Animation[] animations = flipAnim(viewAnimator, dir, duration, interpolator, scale);
@@ -122,7 +122,7 @@ public class CanFlipAnimation {
      * @param interpolator Interpolator
      * @param scale        float
      */
-    public static void flipRepeat(final int count, final ViewAnimator viewAnimator, final FlipDirection dir, final long duration, final Interpolator interpolator, @FloatRange(from = 0.0, to = 1.0) final float scale) {
+    public static void flipRepeat(final int count, final ViewAnimator viewAnimator, final FlipDirection dir, final long duration, final Interpolator interpolator,  final float scale) {
 
 
         if (count > 0) {
@@ -189,7 +189,7 @@ public class CanFlipAnimation {
 
     }
 
-    public static void flipForever(final ViewAnimator viewAnimator, final FlipDirection dir, final long duration, final Interpolator interpolator, @FloatRange(from = 0.0, to = 1.0) final float scale) {
+    public static void flipForever(final ViewAnimator viewAnimator, final FlipDirection dir, final long duration, final Interpolator interpolator,  final float scale) {
 
         flipRepeat(0, viewAnimator, dir, duration, interpolator, scale);
     }

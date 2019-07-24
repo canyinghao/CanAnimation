@@ -1,13 +1,12 @@
 package com.canyinghao.cananimation.demo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ViewFlipper;
 
 import com.canyinghao.cananimation.CanFlipAnimation;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 /**
  * Created by canyignhao on 16/2/17.
@@ -15,14 +14,14 @@ import butterknife.ButterKnife;
 public class FlipperAnimeActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.vf)
+
     ViewFlipper vf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flipper);
-        ButterKnife.bind(this);
+        vf = findViewById(R.id.vf);
 
 
         vf.postDelayed(new Runnable() {

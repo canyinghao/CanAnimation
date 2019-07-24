@@ -1,7 +1,6 @@
 package com.canyinghao.cananimation;
 
 
-import android.support.annotation.NonNull;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -28,8 +27,8 @@ public final class CanAnimation {
      * @param animator
      * @return
      */
-    @NonNull
-    public static Animator valueAnimatorForever(@NonNull Animator animator) {
+    
+    public static Animator valueAnimatorForever( Animator animator) {
         return valueAnimatorRepeat(-1, animator);
     }
 
@@ -40,8 +39,8 @@ public final class CanAnimation {
      * @param animator
      * @return
      */
-    @NonNull
-    public static Animator valueAnimatorRepeat(final int count, @NonNull Animator animator) {
+    
+    public static Animator valueAnimatorRepeat(final int count,  Animator animator) {
         if (count <= 1 && count != -1)
             return animator;
 
@@ -63,8 +62,8 @@ public final class CanAnimation {
      * @param animator
      * @return
      */
-    @NonNull
-    public static Animator animatorSetForever(final int count, @NonNull final Animator animator) {
+    
+    public static Animator animatorSetForever(final int count,  final Animator animator) {
         return animatorSetRepeat(-1, animator);
     }
 
@@ -74,8 +73,8 @@ public final class CanAnimation {
      * @param animator
      * @return
      */
-    @NonNull
-    public static Animator animatorSetRepeat(final int count, @NonNull final Animator animator) {
+    
+    public static Animator animatorSetRepeat(final int count,  final Animator animator) {
 
         if (!(animator instanceof AnimatorSet)) {
             return animator;
@@ -116,8 +115,8 @@ public final class CanAnimation {
      * @param animators
      * @return
      */
-    @NonNull
-    public static Animator animationSequence(@NonNull Animator... animators) {
+    
+    public static Animator animationSequence( Animator... animators) {
         AnimatorSet set = new AnimatorSet();
         set.playSequentially(animators);
 
@@ -130,8 +129,8 @@ public final class CanAnimation {
      * @param animators
      * @return
      */
-    @NonNull
-    public static Animator animationTogether(@NonNull Animator... animators) {
+    
+    public static Animator animationTogether( Animator... animators) {
         AnimatorSet set = new AnimatorSet();
         set.playTogether(animators);
         return set;
@@ -140,8 +139,8 @@ public final class CanAnimation {
     }
 
 
-    @NonNull
-    public static  Animator run(@NonNull final Runnable runnable) {
+    
+    public static  Animator run( final Runnable runnable) {
 
 
         ValueAnimator animator = new ValueAnimator();

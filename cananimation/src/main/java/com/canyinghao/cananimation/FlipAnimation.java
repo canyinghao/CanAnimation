@@ -2,7 +2,7 @@ package com.canyinghao.cananimation;
 
 import android.graphics.Camera;
 import android.graphics.Matrix;
-import android.support.annotation.FloatRange;
+
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
@@ -18,7 +18,7 @@ public class FlipAnimation extends Animation {
     private boolean mIsX;
     private float mScale;
 
-    public FlipAnimation(float fromDegrees, float toDegrees, float centerX, float centerY, @FloatRange(from = 0.0, to = 1.0) float scale) {
+    public FlipAnimation(float fromDegrees, float toDegrees, float centerX, float centerY,  float scale) {
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
         mCenterX = centerX;

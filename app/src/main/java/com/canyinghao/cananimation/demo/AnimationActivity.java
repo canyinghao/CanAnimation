@@ -3,9 +3,6 @@ package com.canyinghao.cananimation.demo;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -14,10 +11,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.canyinghao.cananimation.CanAnimation;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 
 /**
  * Created by canyignhao on 16/2/18.
@@ -25,11 +23,11 @@ import butterknife.OnClick;
 public class AnimationActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.toolbar)
+
     Toolbar toolbar;
-    @BindView(R.id.animContainer)
+
     FrameLayout animContainer;
-    @BindView(R.id.fab)
+
     FloatingActionButton fab;
 
     @Override
@@ -37,7 +35,9 @@ public class AnimationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        toolbar =  findViewById(R.id.toolbar);
+        animContainer =  findViewById(R.id.animContainer);
+        fab =  findViewById(R.id.fab);
 
         setSupportActionBar(toolbar);
 
@@ -130,11 +130,14 @@ public class AnimationActivity extends AppCompatActivity {
 
 
         }
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playAnimation();
+            }
+        });
     }
 
-    @OnClick(R.id.fab)
-    public void click(View v) {
-        playAnimation();
 
-    }
 }

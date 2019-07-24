@@ -1,15 +1,14 @@
 package com.canyinghao.cananimation.demo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 /**
  * Created by canyignhao on 16/2/16.
@@ -17,14 +16,13 @@ import butterknife.ButterKnife;
 public class FlipperDemoActivity extends AppCompatActivity implements android.view.GestureDetector.OnGestureListener{
 
 
-    @BindView(R.id.vf)
     ViewFlipper viewFlipper;
     GestureDetector gestureDetector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flipper);
-        ButterKnife.bind(this);
+        viewFlipper =  findViewById(R.id.vf);
 
 
         gestureDetector = new GestureDetector(this);    // 声明检测手势事件

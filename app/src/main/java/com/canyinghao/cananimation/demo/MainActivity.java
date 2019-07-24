@@ -4,10 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,10 +13,11 @@ import android.widget.TextView;
 
 import com.canyinghao.cananimation.CanAnimation;
 import com.canyinghao.cananimation.CanValueAnimator;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import static com.canyinghao.cananimation.CanAnimation.animationSequence;
 import static com.canyinghao.cananimation.CanAnimation.animationTogether;
@@ -28,19 +25,21 @@ import static com.canyinghao.cananimation.CanAnimation.animationTogether;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.toolbar)
+
     Toolbar toolbar;
 
-    @BindView(R.id.fab)
+
     FloatingActionButton fab;
-    @BindView(R.id.animContainer)
+
     FrameLayout animContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        toolbar = findViewById(R.id.toolbar);
+        fab = findViewById(R.id.fab);
+        animContainer = findViewById(R.id.animContainer);
 
         setSupportActionBar(toolbar);
 
@@ -148,15 +147,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playAnimation();
+            }
+        });
     }
 
 
 
-    @OnClick(R.id.fab)
-    public void click(View v) {
-        playAnimation();
 
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

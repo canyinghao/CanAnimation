@@ -1,8 +1,7 @@
 package com.canyinghao.cananimation;
 
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
 import android.view.View;
 import android.view.animation.Interpolator;
 
@@ -198,7 +197,7 @@ public class CanValueAnimator extends ValueAnimator {
     }
 
 
-    public Object invokeMethod(@NonNull Object owner, @NonNull String fieldName, @NonNull Object obj) {
+    public Object invokeMethod( Object owner,  String fieldName,  Object obj) {
         try {
 
             Class objectClass = owner.getClass();
@@ -243,7 +242,7 @@ public class CanValueAnimator extends ValueAnimator {
         }
 
 
-        private void setProperties(@NonNull CanValueAnimator animator, float duration, @Nullable Interpolator interpolator) {
+        private void setProperties( CanValueAnimator animator, float duration,  Interpolator interpolator) {
             if (duration < 0) {
                 duration = 0;
             }
@@ -254,7 +253,7 @@ public class CanValueAnimator extends ValueAnimator {
             animator.setView(view);
         }
 
-        public Animator color(int from, int to, float duration, @Nullable Interpolator interpolator) {
+        public Animator color(int from, int to, float duration,  Interpolator interpolator) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(COLOR);
@@ -262,18 +261,18 @@ public class CanValueAnimator extends ValueAnimator {
             return action;
         }
 
-        @NonNull
+        
         public Animator color(int from, int to) {
             return color(from, to, 1);
         }
 
 
-        @NonNull
+        
         public Animator color(int from, int to, float duration) {
             return color(from, to, duration, null);
         }
 
-        public Animator colorText(int from, int to, float duration, @Nullable Interpolator interpolator) {
+        public Animator colorText(int from, int to, float duration,  Interpolator interpolator) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(COLOR_TEXT);
@@ -281,20 +280,20 @@ public class CanValueAnimator extends ValueAnimator {
             return action;
         }
 
-        @NonNull
+        
         public Animator colorText(int from, int to) {
             return colorText(from, to, 1);
         }
 
 
-        @NonNull
+        
         public Animator colorText(int from, int to, float duration) {
             return colorText(from, to, duration, null);
         }
 
 
-        @NonNull
-        public Animator rotate(float rotation, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
+        
+        public Animator rotate(float rotation, float duration,  Interpolator interpolator, boolean isFrom) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(isFrom ? ROTATE_FROM : ROTATE_TO);
@@ -303,44 +302,44 @@ public class CanValueAnimator extends ValueAnimator {
         }
 
 
-        @NonNull
+        
         public Animator rotateFrom(float rotation) {
             return rotateFrom(rotation, 1);
         }
 
 
-        @NonNull
+        
         public Animator rotateFrom(float rotation, float duration) {
             return rotateFrom(rotation, duration, null);
         }
 
 
-        @NonNull
-        public Animator rotateFrom(float rotation, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator rotateFrom(float rotation, float duration,  Interpolator interpolator) {
             return rotate(rotation, duration, interpolator, true);
         }
 
 
-        @NonNull
+        
         public Animator rotateTo(float rotation) {
             return rotateTo(rotation, 1);
         }
 
 
-        @NonNull
+        
         public Animator rotateTo(float rotation, float duration) {
             return rotateTo(rotation, duration, null);
         }
 
 
-        @NonNull
-        public Animator rotateTo(float rotation, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator rotateTo(float rotation, float duration,  Interpolator interpolator) {
             return rotate(rotation, duration, interpolator, false);
         }
 
 
-        @NonNull
-        public Animator rotateX(float rotation, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
+        
+        public Animator rotateX(float rotation, float duration,  Interpolator interpolator, boolean isFrom) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(isFrom ? ROTATE_X_FROM : ROTATE_X_TO);
@@ -348,8 +347,8 @@ public class CanValueAnimator extends ValueAnimator {
             return action;
         }
 
-        @NonNull
-        public Animator rotateY(float rotation, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
+        
+        public Animator rotateY(float rotation, float duration,  Interpolator interpolator, boolean isFrom) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(isFrom ? ROTATE_Y_FROM : ROTATE_Y_TO);
@@ -358,8 +357,8 @@ public class CanValueAnimator extends ValueAnimator {
         }
 
 
-        @NonNull
-        public Animator move(float x, float y, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
+        
+        public Animator move(float x, float y, float duration,  Interpolator interpolator, boolean isFrom) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(isFrom ? MOVE_FROM : MOVE_TO);
@@ -367,44 +366,44 @@ public class CanValueAnimator extends ValueAnimator {
             return action;
         }
 
-        @NonNull
+        
         public Animator moveFrom(float x, float y) {
             return moveFrom(x, y, 1);
         }
 
 
-        @NonNull
+        
         public Animator moveFrom(float x, float y, float duration) {
             return moveFrom(x, y, duration, null);
         }
 
 
-        @NonNull
-        public Animator moveFrom(float x, float y, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator moveFrom(float x, float y, float duration,  Interpolator interpolator) {
             return move(x, y, duration, interpolator, true);
         }
 
 
-        @NonNull
+        
         public Animator moveTo(float x, float y) {
             return moveTo(x, y, 1);
         }
 
 
-        @NonNull
+        
         public Animator moveTo(float x, float y, float duration) {
             return moveTo(x, y, duration, null);
         }
 
 
-        @NonNull
-        public Animator moveTo(float x, float y, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator moveTo(float x, float y, float duration,  Interpolator interpolator) {
             return move(x, y, duration, interpolator, false);
         }
 
 
-        @NonNull
-        public Animator scale(float scaleX, float scaleY, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
+        
+        public Animator scale(float scaleX, float scaleY, float duration,  Interpolator interpolator, boolean isFrom) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(isFrom ? SCALE_FROM : SCALE_TO);
@@ -413,25 +412,25 @@ public class CanValueAnimator extends ValueAnimator {
         }
 
 
-        @NonNull
+        
         public Animator scaleTo(float scaleX, float scaleY) {
             return scaleTo(scaleX, scaleY, 1);
         }
 
 
-        @NonNull
+        
         public Animator scaleTo(float scaleX, float scaleY, float duration) {
             return scaleTo(scaleX, scaleY, duration, null);
         }
 
 
-        @NonNull
-        public Animator scaleTo(float scaleX, float scaleY, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator scaleTo(float scaleX, float scaleY, float duration,  Interpolator interpolator) {
             return scale(scaleX, scaleY, duration, interpolator, false);
         }
 
 
-        @NonNull
+        
         public Animator scaleFrom(float scaleX, float scaleY) {
             return scaleFrom(scaleX, scaleY, 1);
         }
@@ -442,14 +441,14 @@ public class CanValueAnimator extends ValueAnimator {
         }
 
 
-        @NonNull
-        public Animator scaleFrom(float scaleX, float scaleY, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator scaleFrom(float scaleX, float scaleY, float duration,  Interpolator interpolator) {
             return scale(scaleX, scaleY, duration, interpolator, true);
         }
 
 
-        @NonNull
-        public Animator alpha(float alpha, float duration, @Nullable Interpolator interpolator, boolean isFrom) {
+        
+        public Animator alpha(float alpha, float duration,  Interpolator interpolator, boolean isFrom) {
             CanValueAnimator action = new CanValueAnimator();
             setProperties(action, duration, interpolator);
             action.setType(isFrom ? ALPHA_FROM : ALPHA_TO);
@@ -458,38 +457,38 @@ public class CanValueAnimator extends ValueAnimator {
         }
 
 
-        @NonNull
+        
         public Animator alphaFrom(float toAlpha) {
             return alphaFrom(toAlpha, 1);
         }
 
 
-        @NonNull
+        
         public Animator alphaFrom(float toAlpha, float duration) {
             return alphaFrom(toAlpha, duration, null);
         }
 
 
-        @NonNull
-        public Animator alphaFrom(float toAlpha, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator alphaFrom(float toAlpha, float duration,  Interpolator interpolator) {
             return alpha(toAlpha, duration, interpolator, true);
         }
 
 
-        @NonNull
+        
         public Animator alphaTo(float toAlpha) {
             return alphaTo(toAlpha, 1);
         }
 
 
-        @NonNull
+        
         public Animator alphaTo(float toAlpha, float duration) {
             return alphaTo(toAlpha, duration, null);
         }
 
 
-        @NonNull
-        public Animator alphaTo(float toAlpha, float duration, @Nullable Interpolator interpolator) {
+        
+        public Animator alphaTo(float toAlpha, float duration,  Interpolator interpolator) {
             return alpha(toAlpha, duration, interpolator, false);
         }
 
