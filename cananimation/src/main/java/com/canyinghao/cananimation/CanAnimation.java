@@ -1,6 +1,10 @@
 package com.canyinghao.cananimation;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -10,10 +14,6 @@ import android.view.animation.Interpolator;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.AnimatorListenerAdapter;
-import com.nineoldandroids.animation.AnimatorSet;
-import com.nineoldandroids.animation.ValueAnimator;
 
 
 /**
@@ -28,7 +28,7 @@ public final class CanAnimation {
      * @return
      */
     
-    public static Animator valueAnimatorForever( Animator animator) {
+    public static Animator valueAnimatorForever(Animator animator) {
         return valueAnimatorRepeat(-1, animator);
     }
 
